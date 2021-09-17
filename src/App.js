@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import Home from './Home';
 import PizzaForm from './pizza';
 import schema from './formSchema';
@@ -94,6 +94,20 @@ export default function App() {
           <Link to="/pizza">Order Pizza</Link>
         </div>
       </nav>
+      <Switch>
+        <Route path="/pizza">
+          <PizzaForm
+            values={formValues}
+            change={inputChange}
+            submit={formSubmit}
+            disabled={disabled}
+            errors={formErrors}
+          />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 };
