@@ -11,6 +11,7 @@ const initialFormValues = {
   name: '',
   size: '',
   sauce: '',
+  spIns: '',
   beef: false,
   bacon: false,
   chicken: false,
@@ -75,7 +76,8 @@ export default function App() {
     const newOrder = {
       name: formValues.name.trim(),
       size: formValues.size.trim(),
-      sauce: formValues.sauce.trim(),     
+      sauce: formValues.sauce.trim(),
+      spIns: formValues.spIns.trim(),     
       sides: ['beef', 'bacon', 'chicken', 'sausage', 'pepperoni', 'meatball', 'salami', 'steak', 'onions', 'peppers', 'olives'].filter(sides => !!formValues[sides])
     }
     postNewOrder(newOrder);
